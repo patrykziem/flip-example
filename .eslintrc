@@ -1,0 +1,21 @@
+{
+  "extends": "apptension",
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/jsx-uses-vars": 1,
+    "react/jsx-uses-react": 1,
+    "react/react-in-jsx-scope": 2,
+    "no-undefined": 0,
+    "no-return-assign": 0,
+    "no-new": 0,
+    "new-cap": 0
+  },
+  "ecmaFeatures": {
+    "jsx": true
+  },
+  "env": {
+    "es6": true
+  }
+}

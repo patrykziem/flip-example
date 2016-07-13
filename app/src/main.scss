@@ -1,0 +1,28 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+@import 'bourbon';
+@import 'neat';
+@import "~normalize-scss";
+@import "generated/sprites";
+@import "variables";
+@import "routes/routes";
+
+@include normalize();
+
+html, body {
+  overflow-x: hidden;
+}
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#react-root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
