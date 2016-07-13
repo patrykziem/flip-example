@@ -54,13 +54,15 @@ export class App extends Component {
   }
 
   componentDidMount() {
-    const stagger = 0.05;
+    const stagger = 0.075;
     new TimelineMax({
-      tweens: this.paperRefs.toList().map((ref, index) => TweenMax.fromTo(findDOMNode(ref), 0.2, {
-        opacity: 0
+      tweens: this.paperRefs.toList().map((ref, index) => TweenMax.fromTo(findDOMNode(ref), 0.5, {
+        opacity: 0,
+        y: 10
       }, {
         opacity: 1,
-        delay: stagger * (Math.floor(index / 3) + index % 3)
+        y: 0,
+        delay: 0.5 + stagger * (Math.floor(index / 4) + index % 4)
       }))
     })
   }
@@ -95,10 +97,6 @@ export class App extends Component {
 
     return (
       <section className="welcome" style={{background: blueGrey50}}>
-        <AppBar
-          title="FLIP"
-          iconClassNameRight="muidocs-icon-navigation-expand-more"/>
-
         <div className="welcome__content" ref={(ref) => this.contentRef = ref}>
           {tiles.map((tile) => this.renderTile(tile))}
         </div>
